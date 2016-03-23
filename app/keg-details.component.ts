@@ -15,6 +15,7 @@ import { KegEditComponent } from './keg-edit.component';
       class="btn btn-md btn-danger">
     Reduce Keg</button>
     <button
+      (closeEdit)="toggleEdit($event)"
       *ngIf="!showEdit" (click)="toggleEdit(true)"
       class="btn btn-md btn-warning">
     Edit Description</button>
@@ -35,12 +36,11 @@ export class KegDetailsComponent {
 
   kegReduced(chosenKeg: Keg): void {
     chosenKeg.pints = chosenKeg.pints - 1;
-    console.log('trying to reduce keg' + chosenKeg.pints);
   }
 
   toggleEdit(editDisplayStatus: boolean) {
-    this.showEdit = editDisplayStatus;
     console.log("here we go!");
+    this.showEdit = editDisplayStatus;
     console.log(this.showEdit);
   }
 }
