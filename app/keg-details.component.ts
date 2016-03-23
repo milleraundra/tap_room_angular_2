@@ -5,6 +5,7 @@ import { KegEditComponent } from './keg-edit.component';
 @Component ({
   selector: 'keg-details',
   inputs: ['keg'],
+  directives: [KegEditComponent],
   template: `
     <h3>Keg Name: {{ keg.name }}</h3>
     <h4>Percentage: {{ keg.percentage }}</h4>
@@ -18,6 +19,7 @@ import { KegEditComponent } from './keg-edit.component';
       class="btn btn-md btn-warning">
     Edit Description</button>
     <keg-edit
+      *ngIf="showEdit"
       [keg]="keg">
     </keg-edit>
   `
@@ -38,5 +40,7 @@ export class KegDetailsComponent {
 
   toggleEdit(editDisplayStatus: boolean) {
     this.showEdit = editDisplayStatus;
+    console.log("here we go!");
+    console.log(this.showEdit);
   }
 }
