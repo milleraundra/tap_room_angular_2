@@ -7,7 +7,11 @@ import { KegListComponent } from './keg-list.component';
   directives: [KegListComponent],
   template: `
     <div class="container">
-      <keg-list [kegList]="kegs"></keg-list>
+      <h1 class="page-header">Your Bar Name</h1>
+      <h3>Keg List:</h3>
+      <keg-list
+        [kegList]="kegs">
+      </keg-list>
     </div>
   `
 })
