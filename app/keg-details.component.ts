@@ -14,11 +14,14 @@ import { KegEditComponent } from './keg-edit.component';
       (click)="kegReduced(keg)"
       class="btn btn-md btn-danger">
     Reduce Keg</button>
-    <button
-      (closeEdit)="toggleEdit($event)"
-      *ngIf="!showEdit" (click)="toggleEdit(true)"
+    <button *ngIf="!showEdit"
+      (click)="toggleEdit()"
       class="btn btn-md btn-warning">
     Edit Description</button>
+    <button *ngIf="showEdit"
+      (click)="toggleEdit()"
+      class="btn btn-md btn-info">
+    Done Editing</button>
     <keg-edit
       *ngIf="showEdit"
       [keg]="keg">
@@ -38,9 +41,8 @@ export class KegDetailsComponent {
     chosenKeg.pints = chosenKeg.pints - 1;
   }
 
-  toggleEdit(editDisplayStatus: boolean) {
-    console.log("here we go!");
-    this.showEdit = editDisplayStatus;
-    console.log(this.showEdit);
+  toggleEdit() {
+    this.showEdit = !this.showEdit;
   }
+
 }
