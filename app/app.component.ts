@@ -10,7 +10,8 @@ import { KegListComponent } from './keg-list.component';
       <h1 class="page-header">Your Bar Name</h1>
       <h3>Keg List:</h3>
       <keg-list
-        [kegList]="kegs">
+        [kegList]="kegs"
+        (onKegSelect)="kegWasSelected($event)">
       </keg-list>
     </div>
   `
@@ -24,6 +25,9 @@ export class AppComponent {
       new Keg("Guinness", 4.3, 0),
       new Keg("Amstel Light", 3.5, 1),
       new Keg("Coors", 5.0, 2)
-    ]
+    ];
+  }
+  kegWasSelected(clickedKeg: Keg): void {
+    console.log("Parent" + clickedKeg.name);
   }
 }
