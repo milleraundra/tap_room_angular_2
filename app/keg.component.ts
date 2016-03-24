@@ -7,7 +7,8 @@ import { Keg } from './keg.model';
   template: `
     <div>
       <h4 class="kegItem"
-      [class.expensive]="keg.price > 4.99">
+      [class.expensive]="keg.price > 4.99"
+      [class.empty]="keg.pints === 0">
       {{ keg.name }}</h4>
     </div>
   `

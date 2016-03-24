@@ -29,7 +29,6 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Restock:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'restock'"
-      [class.empty]="singleKeg.pints === 0"
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >
