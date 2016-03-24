@@ -8,17 +8,19 @@ import { KegEditComponent } from './keg-edit.component';
   directives: [KegEditComponent],
   template: `
     <h3>Keg Name: {{ keg.name }}</h3>
-    <h4>Percentage: {{ keg.percentage }}</h4>
+    <h4>Percentage: {{ keg.percentage }}%</h4>
     <h4>Pints Remaining: {{ keg.pints }}</h4>
     <button
       (click)="kegReduced(keg)"
       class="btn btn-md btn-danger">
     Reduce Keg</button>
-    <button *ngIf="!showEdit"
+    <button
+      *ngIf="!showEdit"
       (click)="toggleEdit()"
       class="btn btn-md btn-warning">
     Edit Description</button>
-    <button *ngIf="showEdit"
+    <button
+      *ngIf="show Edit"
       (click)="toggleEdit()"
       class="btn btn-md btn-info">
     Done Editing</button>
