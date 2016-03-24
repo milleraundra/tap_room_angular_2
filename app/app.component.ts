@@ -11,7 +11,7 @@ import { NewKegComponent } from './new-keg.component';
       <h1 class="page-header">Your Bar Name</h1>
       <div class="row">
         <div class="col-sm-6">
-          <h3>Keg List:</h3>
+          <h3>All Kegs:</h3>
           <keg-list
             [kegList]="kegs"
             (onKegSelect)="kegWasSelected($event)">

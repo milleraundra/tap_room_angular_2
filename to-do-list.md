@@ -1,10 +1,8 @@
 # Tasks Remaining:
 
-[x] Form to add new keg
-[x] Get bootstrap working in html template on app.components.ts
 [ ] Show separate list of kegs under 10 pints
+[ ] Don't allow Keg Count to drop below 0
 [ ] Color code kegs?
-[x] Toggle Edit component visibility
 
-## Questions:
-* Why do events need to be submitted up to the root component? The model can be changed locally in individual components, what is the value is submitting it?
+
+* RESTORE KEG COUNT IN KEG.MODEL.TS

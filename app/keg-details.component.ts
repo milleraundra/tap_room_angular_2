@@ -19,6 +19,7 @@ import { KegEditComponent } from './keg-edit.component';
         <h4>Percentage: {{ keg.percentage }}%</h4>
         <h4>Pints Remaining: {{ keg.pints }}</h4>
         <button
+          *ngIf="keg.pints > 0"
           (click)="kegReduced(keg)"
           class="btn btn-md btn-danger">
         Reduce Keg</button>
@@ -42,7 +43,7 @@ import { KegEditComponent } from './keg-edit.component';
 })
 
 export class KegDetailsComponent {
-  public closeEditField: EventEmitter<number>;
+  public closeEditField: EventEmitter<any>;
   public showEdit: boolean;
   constructor() {
     this.closeEditField = new EventEmitter();
@@ -58,7 +59,7 @@ export class KegDetailsComponent {
   }
 
   closeField() {
-    this.closeEditField.emit();
+    this.closeEditField.emit(1);
   }
 
 }
