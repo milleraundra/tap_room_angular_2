@@ -16,3 +16,8 @@
 .empty {
   color: #d9534f !important;
 }
+
+.strong {
+  color: #369;
+  font-weight: bold;
+}
