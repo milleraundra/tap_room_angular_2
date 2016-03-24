@@ -9,9 +9,9 @@ import { NewKegComponent } from './new-keg.component';
   template: `
     <div class="container">
       <h1 class="page-header">Your Bar Name</h1>
-      <h3>Keg List:</h3>
       <div class="row">
         <div class="col-sm-6">
+          <h3>Keg List:</h3>
           <keg-list
             [kegList]="kegs"
             (onKegSelect)="kegWasSelected($event)">
@@ -40,6 +40,7 @@ export class AppComponent {
     console.log("Parent" + clickedKeg.name);
   }
   createNewKeg(newKeg: any[]): void {
+    console.log("A new Keg was successfully created!");
     this.kegs.push(new Keg(newKeg[0], newKeg[1], this.kegs.length));
   }
 }

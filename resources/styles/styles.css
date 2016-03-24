@@ -3,3 +3,8 @@
   color: #369;
   padding: 1% 0;
 }
+
+.close {
+  float: right;
+  padding: 2px;
+}

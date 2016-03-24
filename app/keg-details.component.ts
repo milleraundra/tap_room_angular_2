@@ -5,34 +5,42 @@ import { KegEditComponent } from './keg-edit.component';
 @Component ({
   selector: 'keg-details',
   inputs: ['keg'],
+  // outputs: ['closeEditField'],
   directives: [KegEditComponent],
   template: `
-    <h3>Keg Name: {{ keg.name }}</h3>
-    <h4>Percentage: {{ keg.percentage }}%</h4>
-    <h4>Pints Remaining: {{ keg.pints }}</h4>
-    <button
-      (click)="kegReduced(keg)"
-      class="btn btn-md btn-danger">
-    Reduce Keg</button>
-    <button
-      *ngIf="!showEdit"
-      (click)="toggleEdit()"
-      class="btn btn-md btn-warning">
-    Edit Description</button>
-    <button
-      *ngIf="showEdit"
-      (click)="toggleEdit()"
-      class="btn btn-md btn-info">
-    Done Editing</button>
-    <keg-edit
-      *ngIf="showEdit"
-      [keg]="keg">
-    </keg-edit>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Keg: {{ keg.name }}</h3>
+      </div>
+      <div class="panel-body">
+        <h4>Percentage: {{ keg.percentage }}%</h4>
+        <h4>Pints Remaining: {{ keg.pints }}</h4>
+        <button
+          (click)="kegReduced(keg)"
+          class="btn btn-md btn-danger">
+        Reduce Keg</button>
+        <button
+          *ngIf="!showEdit"
+          (click)="toggleEdit()"
+          class="btn btn-md btn-warning">
+        Edit Description</button>
+        <button
+          *ngIf="showEdit"
+          (click)="toggleEdit()"
+          class="btn btn-md btn-info">
+        Done Editing</button>
+        <keg-edit
+          *ngIf="showEdit"
+          [keg]="keg">
+        </keg-edit>
+      </div>
+    </div>
   `
 })
 
 export class KegDetailsComponent {
   public reducePintCount: EventEmitter<Keg>;
+  // public closeEditField: EventEmitter<any>;
   public showEdit: boolean;
   constructor() {
     this.reducePintCount = new EventEmitter();
@@ -46,5 +54,9 @@ export class KegDetailsComponent {
   toggleEdit() {
     this.showEdit = !this.showEdit;
   }
+
+  // closeField() {
+  //   this.closeEditField.emit(null);
+  // }
 
 }
