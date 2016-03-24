@@ -15,7 +15,11 @@ import { KegDetailsComponent } from './keg-details.component';
       (click)="kegClicked(singleKeg)"
       >
     </keg-display>
-    <keg-details *ngIf="selectedKeg" [keg]="selectedKeg"></keg-details>
+    <keg-details
+      *ngIf="selectedKeg"
+      (closeEditField)="emptySelectedKeg($event)"
+      [keg]="selectedKeg">
+    </keg-details>
   `
 })
 
@@ -29,9 +33,10 @@ export class KegListComponent {
 
   kegClicked(clickedKeg: Keg): void {
     this.selectedKeg = clickedKeg;
-    console.log("This is the selected keg: " + this.selectedKeg);
     this.onKegSelect.emit(clickedKeg);
   }
-
+  emptySelectedKeg(junk: number): void {
+    this.selectedKeg = null;
+  }
 
 }

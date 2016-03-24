@@ -5,11 +5,14 @@ import { KegEditComponent } from './keg-edit.component';
 @Component ({
   selector: 'keg-details',
   inputs: ['keg'],
-  // outputs: ['closeEditField'],
+  outputs: ['closeEditField'],
   directives: [KegEditComponent],
   template: `
     <div class="panel panel-primary">
       <div class="panel-heading">
+        <button class="btn btn-small btn-default close"
+        (click)="closeField()"
+        >X</button>
         <h3>Keg: {{ keg.name }}</h3>
       </div>
       <div class="panel-body">
@@ -39,11 +42,10 @@ import { KegEditComponent } from './keg-edit.component';
 })
 
 export class KegDetailsComponent {
-  public reducePintCount: EventEmitter<Keg>;
-  // public closeEditField: EventEmitter<any>;
+  public closeEditField: EventEmitter<number>;
   public showEdit: boolean;
   constructor() {
-    this.reducePintCount = new EventEmitter();
+    this.closeEditField = new EventEmitter();
     this.showEdit = false;
   }
 
@@ -55,8 +57,8 @@ export class KegDetailsComponent {
     this.showEdit = !this.showEdit;
   }
 
-  // closeField() {
-  //   this.closeEditField.emit(null);
-  // }
+  closeField() {
+    this.closeEditField.emit(1);
+  }
 
 }
