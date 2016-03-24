@@ -7,10 +7,14 @@ import { KegListComponent } from './keg-list.component.ts';
   outputs: ['onClickNewKeg'],
   template: `
     <h3>Add a New Keg:</h3>
-    <label>Name:</label>
-    <input type="text" #newName>
-    <label>Percentage</label>
-    <input type="number" #newPercentage>
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" #newName>
+    </div>
+    <div class="form-group">
+      <label>Percentage:</label>
+      <input type="number" #newPercentage>
+    </div>
     <button (click)="addKeg(newName, newPercentage)">Add Keg</button>
   `
 })
@@ -25,6 +29,5 @@ export class NewKegComponent {
     this.onClickNewKeg.emit([kegName.value, kegPercentage.value]);
     kegName.value = "";
     kegPercentage.value = "";
-
   }
 }

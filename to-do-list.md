@@ -1,6 +1,7 @@
 # Tasks Remaining:
 
-[ ] Form to add new keg
+[x] Form to add new keg
+[ ] Get bootstrap working in html template on app.components.ts
 [ ] Show separate list of kegs under 10 pints
 [ ] Color code kegs?
 [ ] Toggle Edit component visibility

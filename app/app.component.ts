@@ -10,16 +10,18 @@ import { NewKegComponent } from './new-keg.component';
     <div class="container">
       <h1 class="page-header">Your Bar Name</h1>
       <h3>Keg List:</h3>
-        <!-- <div class="row"> -->
-          <!-- <div class="col-sm-6"> -->
-            <keg-list
-              [kegList]="kegs"
-              (onKegSelect)="kegWasSelected($event)">
-            </keg-list>
-          <!-- </div> -->
-        <!-- </div> -->
+      <div class="row">
+        <div class="col-sm-6">
+          <keg-list
+            [kegList]="kegs"
+            (onKegSelect)="kegWasSelected($event)">
+          </keg-list>
+        </div>
 
-        <new-keg (onClickNewKeg)=createNewKeg($event)></new-keg>
+        <div class="col-sm-6">
+          <new-keg (onClickNewKeg)=createNewKeg($event)></new-keg>
+        </div>
+      </div>
     </div>
   `
 })
@@ -38,8 +40,6 @@ export class AppComponent {
     console.log("Parent" + clickedKeg.name);
   }
   createNewKeg(newKeg: any[]): void {
-    console.log("Hi!");
     this.kegs.push(new Keg(newKeg[0], newKeg[1], this.kegs.length));
-    console.log(this.kegs);
   }
 }
