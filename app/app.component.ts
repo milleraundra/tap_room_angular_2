@@ -36,11 +36,8 @@ export class AppComponent {
       new Keg("Coors", 5.0, 2)
     ];
   }
-  kegWasSelected(clickedKeg: Keg): void {
-    console.log("Parent" + clickedKeg.name);
-  }
+  kegWasSelected(clickedKeg: Keg): void {}
   createNewKeg(newKeg: any[]): void {
-    console.log("A new Keg was successfully created!");
     this.kegs.push(new Keg(newKeg[0], newKeg[1], this.kegs.length));
   }
 }

@@ -58,7 +58,7 @@ export class KegDetailsComponent {
   }
 
   closeField() {
-    this.closeEditField.emit(1);
+    this.closeEditField.emit();
   }
 
 }

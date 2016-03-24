@@ -17,7 +17,7 @@ import { KegDetailsComponent } from './keg-details.component';
     </keg-display>
     <keg-details
       *ngIf="selectedKeg"
-      (closeEditField)="emptySelectedKeg($event)"
+      (closeEditField)="emptySelectedKeg()"
       [keg]="selectedKeg">
     </keg-details>
   `
@@ -35,7 +35,7 @@ export class KegListComponent {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
-  emptySelectedKeg(junk: number): void {
+  emptySelectedKeg(): void {
     this.selectedKeg = null;
   }
 
