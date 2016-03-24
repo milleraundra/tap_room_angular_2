@@ -8,9 +8,25 @@ import { KegDetailsComponent } from './keg-details.component';
   template: `
     <div>
       <h3>Edit Keg Description</h3>
+      <div>
+      <label>Name:</label>
       <input [(ngModel)]="keg.name" />
+      </div>
+
+      <div>
+      <label>Alcohol:</label>
       <input [(ngModel)]="keg.percentage"/>
+      </div>
+
+      <div>
+      <label>Price:</label>
+      <input [(ngModel)]="keg.price"/>
+      </div>
+
+      <div>
+      <label>Pints:</label>
       <input [(ngModel)]="keg.pints"/>
+      </div>
     </div>
   `
 })

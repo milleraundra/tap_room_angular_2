@@ -14,8 +14,7 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Full:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'full'"
-      [class.full]="singleKeg"
-      [class.expensive]="singleKeg.price > 4.99"
+
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >
@@ -23,8 +22,6 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Low:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'low'"
-      [class.low]="singleKeg"
-      [class.expensive]="singleKeg.price > 4.99"
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >
@@ -32,8 +29,7 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Restock:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'restock'"
-      [class.empty]="singleKeg"
-      [class.expensive]="singleKeg.price > 4.99"
+      [class.empty]="singleKeg.pints === 0"
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >
