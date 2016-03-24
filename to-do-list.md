@@ -1,8 +1,4 @@
 # Tasks Remaining:
 
-[x] Show separate list of kegs under 10 pints
-[x] Don't allow Keg Count to drop below 0
-[ ] Color code kegs?
-
-
-* RESTORE KEG COUNT IN KEG.MODEL.TS
+[ ] Add price property to keg model and instances.
+[ ] Color code kegs based on price.

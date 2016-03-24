@@ -31,13 +31,13 @@ export class AppComponent {
   public kegs: Keg[];
   constructor() {
     this.kegs = [
-      new Keg("Guinness", 4.3, 0),
-      new Keg("Amstel Light", 3.5, 1),
-      new Keg("Coors", 5.0, 2)
+      new Keg("Guinness", 4.3, 5.00, 0),
+      new Keg("Amstel Light", 3.5, 4.18, 1),
+      new Keg("Coors", 5.0, 3.59, 2)
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {}
   createNewKeg(newKeg: any[]): void {
-    this.kegs.push(new Keg(newKeg[0], newKeg[1], this.kegs.length));
+    this.kegs.push(new Keg(newKeg[0], newKeg[1], newKeg[2], this.kegs.length));
   }
 }

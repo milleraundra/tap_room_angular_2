@@ -16,7 +16,8 @@ import { KegEditComponent } from './keg-edit.component';
         <h3>Keg: {{ keg.name }}</h3>
       </div>
       <div class="panel-body">
-        <h4>Percentage: {{ keg.percentage }}%</h4>
+        <h4>Alcohol: {{ keg.percentage }}%</h4>
+        <h4>Cost: \${{ keg.price }}</h4>
         <h4>Pints Remaining: {{ keg.pints }}</h4>
         <button
           *ngIf="keg.pints > 0"
