@@ -1,18 +1,25 @@
 import { Component } from 'angular2/core';
 import { Keg } from './keg.model';
 import { KegListComponent } from './keg-list.component';
+import { NewKegComponent } from './new-keg.component';
 
 @Component({
   selector: 'my-app',
-  directives: [KegListComponent],
+  directives: [KegListComponent, NewKegComponent],
   template: `
     <div class="container">
       <h1 class="page-header">Your Bar Name</h1>
       <h3>Keg List:</h3>
-      <keg-list
-        [kegList]="kegs"
-        (onKegSelect)="kegWasSelected($event)">
-      </keg-list>
+        <!-- <div class="row"> -->
+          <!-- <div class="col-sm-6"> -->
+            <keg-list
+              [kegList]="kegs"
+              (onKegSelect)="kegWasSelected($event)">
+            </keg-list>
+          <!-- </div> -->
+        <!-- </div> -->
+
+        <new-keg (onClickNewKeg)=createNewKeg($event)></new-keg>
     </div>
   `
 })
@@ -29,5 +36,9 @@ export class AppComponent {
   }
   kegWasSelected(clickedKeg: Keg): void {
     console.log("Parent" + clickedKeg.name);
+  }
+  createNewKeg(newKeg: String[]): void {
+    console.log("Hi!");
+    console.log(newKeg);
   }
 }

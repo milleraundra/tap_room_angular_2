@@ -28,7 +28,6 @@ export class KegListComponent {
   }
 
   kegClicked(clickedKeg: Keg): void {
-    console.log("Child: " + clickedKeg.name);
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }

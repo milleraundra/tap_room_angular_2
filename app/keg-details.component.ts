@@ -20,7 +20,7 @@ import { KegEditComponent } from './keg-edit.component';
       class="btn btn-md btn-warning">
     Edit Description</button>
     <button
-      *ngIf="show Edit"
+      *ngIf="showEdit"
       (click)="toggleEdit()"
       class="btn btn-md btn-info">
     Done Editing</button>
