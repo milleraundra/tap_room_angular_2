@@ -37,8 +37,9 @@ export class AppComponent {
   kegWasSelected(clickedKeg: Keg): void {
     console.log("Parent" + clickedKeg.name);
   }
-  createNewKeg(newKeg: String[]): void {
+  createNewKeg(newKeg: any[]): void {
     console.log("Hi!");
-    console.log(newKeg);
+    this.kegs.push(new Keg(newKeg[0], newKeg[1], this.kegs.length));
+    console.log(this.kegs);
   }
 }

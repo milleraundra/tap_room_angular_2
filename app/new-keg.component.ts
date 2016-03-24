@@ -16,13 +16,15 @@ import { KegListComponent } from './keg-list.component.ts';
 })
 
 export class NewKegComponent {
-  public onClickNewKeg: EventEmitter<Array[]>;
+  public onClickNewKeg: EventEmitter<any[]>;
   constructor() {
     this.onClickNewKeg = new EventEmitter();
   }
 
   addKeg(kegName: HTMLInputElement, kegPercentage: HTMLInputElement) {
     this.onClickNewKeg.emit([kegName.value, kegPercentage.value]);
-    console.log([kegName.value, kegPercentage.value]);
+    kegName.value = "";
+    kegPercentage.value = "";
+
   }
 }
