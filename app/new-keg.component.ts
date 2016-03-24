@@ -15,7 +15,7 @@ import { KegListComponent } from './keg-list.component.ts';
       <label>Percentage:</label>
       <input type="number" #newPercentage>
     </div>
-    <button (click)="addKeg(newName, newPercentage)">Add Keg</button>
+    <button class="btn btn-primary"(click)="addKeg(newName, newPercentage)">Add Keg</button>
   `
 })
 

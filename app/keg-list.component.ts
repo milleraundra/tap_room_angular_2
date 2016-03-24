@@ -14,6 +14,7 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Full:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'full'"
+      [class.full]="singleKeg"
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >Can I Type Something Here?
@@ -21,6 +22,7 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Low:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'low'"
+      [class.low]="singleKeg" 
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >
@@ -28,7 +30,7 @@ import { KegStatusPipe } from './keg-status.pipe';
     <h3>Restock:</h3>
     <keg-display
       *ngFor="#singleKeg of kegList | status:'restock'"
-      [class.empty]="singleKeg.pints === 0" 
+      [class.empty]="singleKeg"
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >

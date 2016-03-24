@@ -1,14 +1,21 @@
-.kegItem {
-  font-size: 1.8em;
+.empty {
+  color: #d9534f;
+}
+
+.low {
+  color: #f0ad4e
+}
+
+.full {
   color: #369;
+}
+
+.kegItem {
+  /*font-size: 1.8em;*/
   padding: 1% 0;
 }
 
 .close {
   float: right;
   padding: 2px;
-}
-
-.empty {
-  color: red;
 }
