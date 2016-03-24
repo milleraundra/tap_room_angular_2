@@ -2,15 +2,33 @@ import { Component, EventEmitter } from 'angular2/core';
 import { Keg } from './keg.model.ts';
 import { KegComponent } from './keg.component';
 import { KegDetailsComponent } from './keg-details.component';
+import { KegStatusPipe } from './keg-status.pipe';
 
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
+  pipes: [KegStatusPipe],
   directives: [KegComponent, KegDetailsComponent],
   template: `
+    <h3>Full:</h3>
     <keg-display
-      *ngFor="#singleKeg of kegList"
+      *ngFor="#singleKeg of kegList | status:'full'"
+      [keg]="singleKeg"
+      (click)="kegClicked(singleKeg)"
+      >Can I Type Something Here?
+    </keg-display>
+    <h3>Low:</h3>
+    <keg-display
+      *ngFor="#singleKeg of kegList | status:'low'"
+      [keg]="singleKeg"
+      (click)="kegClicked(singleKeg)"
+      >
+    </keg-display>
+    <h3>Restock:</h3>
+    <keg-display
+      *ngFor="#singleKeg of kegList | status:'restock'"
+      [class.empty]="singleKeg.pints === 0" 
       [keg]="singleKeg"
       (click)="kegClicked(singleKeg)"
       >

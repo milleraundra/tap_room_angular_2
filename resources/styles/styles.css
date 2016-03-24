@@ -8,3 +8,7 @@
   float: right;
   padding: 2px;
 }
+
+.empty {
+  color: red;
+}

@@ -15,7 +15,7 @@ export class KegStatusPipe implements PipeTransform {
       })
     } else if (kegStatus === "low") {
       return input.filter(function(keg) {
-        return (keg.pints >= 11);
+        return (keg.pints <= 61 && keg.pints >= 11);
       })
     } else if (kegStatus === "restock") {
       return input.filter(function(keg) {
